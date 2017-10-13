@@ -1,2 +1,2 @@
 # image-crop-modal
-A directive to crop a image from a popup in AngularJS
+A directive to crop a image into a popup in AngularJS
