@@ -1,0 +1,47 @@
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+    <div class="modal-header">
+        <button type="button" class="dash-close-btn" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">
+            <svg id="i-close" viewBox="0 0 32 32" width="15" height="15" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4">
+                <path d="M2 30 L30 2 M30 30 L2 2" />
+            </svg>
+        </button>
+        <h4 class="modal-title" id="myImageLabel">Change/Edit Patient Photo</h4>
+    </div>
+    <div class="modal-body">
+        <div class="cropper-wrapper">
+
+            <div class="crop-area">
+
+                <ui-cropper image="myImage"
+                            area-type="{{vm.areaType}}"
+                            chargement="'Loading'"
+                            result-image-size="vm.resultImageSize"
+                            result-image="myCroppedImage"
+                            canvas-scalemode="true"
+                            result-image-size="300"
+                            change-on-fly="true"></ui-cropper>
+
+                <div class="load-button">
+                    <button type="button" class="btn btn-warning btn-block"
+                            ngf-select
+                            ngf-change="handleFileSelect($event, $file)"
+                            accept="image/*">
+                        <i class="fa fa-image" aria-hidden="true"></i> Browse...
+                    </button>
+                </div>
+            </div>
+            <div class="cropped-image">
+                <img ng-src="{{myCroppedImage}}">
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="submit" class="btn btn-success">
+            <i class="fa fa-save" aria-hidden="true"></i> Save
+        </button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal" ng-click="vm.clear()">
+            <i class="fa fa-ban" aria-hidden="true"></i> Cancel
+        </button>
+    </div>
+</form>
