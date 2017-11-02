@@ -1,0 +1,44 @@
+.cropper-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    padding: 30px 15px;
+    background-color: $ligther-gray;
+    box-shadow: inset 0 0 10px rgba($black, 0.2);
+}
+
+.crop-area {
+    margin: 0 10px 15px;
+    .load-button {
+        .btn {
+            box-shadow: 0 0 10px rgba($black, 0.4);
+            border-radius: 0;
+        }
+    }
+    canvas {
+        max-width: 100% !important;
+    }
+}
+
+ui-cropper {
+    margin-bottom: 15px;
+    canvas {
+        box-shadow: 0 0 10px rgba($black, 0.8);
+    }
+}
+
+.cropped-image {
+    margin: 0 10px 15px;
+    box-shadow: 0 0 10px rgba($black, 0.8);
+    > img {
+        max-width: 100%;
+    }
+}
+
+.default-img {
+    margin: {
+        left: auto;
+        right: auto;
+    }
+}
